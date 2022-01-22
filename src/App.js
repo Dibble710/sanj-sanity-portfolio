@@ -8,13 +8,11 @@ import Contact from "./pages/Contact";
 import Projects from "./pages/Projects";
 
 
-import TestNavbar from "./components/TestNavbar";
-
 function App() {
   return (
     <Router>
     <div className="h-screen">
-      <TestNavbar />
+      <Navbar />
       <main className="container mx-auto px-3 pb-12">
         <Routes>
           <Route path="/" element={<Home />} />

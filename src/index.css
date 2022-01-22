@@ -54,7 +54,7 @@ body {
 }
 
 .btn-outline:hover {
-  border-color: #000 !important;
+  border-color: #f1f1f1 !important;
   background: var(--color-four) !important;
   color: #000 !important;
 }
@@ -65,8 +65,13 @@ body {
   background-color: var(--color-one);
 }
 
+.home-card img {
+  width: 100%;
+}
+
 .home-card p {
   color: #f1f1f1f1;
+  font-size: 1.2rem;
 }
 
 .card-title {
@@ -83,4 +88,15 @@ body {
 
 .footer {
   background: var(--color-one);
+}
+
+.nav-link:hover {
+  color: var(--color-four) !important;
+}
+
+.footer {
+  justify-content: space-around;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
