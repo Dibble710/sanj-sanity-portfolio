@@ -1,14 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('http://fonts.cdnfonts.com/css/helvetica-neue-9');
+@import url("http://fonts.cdnfonts.com/css/helvetica-neue-9");
 
 :root {
-  --color-one: #875C74;
-  --color-two: #F8BDC4;
+  --color-one: #875c74;
+  --color-two: #f8bdc4;
   --color-three: #a3c3d9;
   --color-five: #cdcdf4;
-  
+
   --color-four: #fce8b0;
 }
 
@@ -80,11 +80,7 @@ body {
   font-weight: 900;
 }
 
-
-
-
 /* footer */
-
 
 .footer {
   background: var(--color-one);
