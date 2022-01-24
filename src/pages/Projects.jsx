@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import sanityClient from "../client";
+import Loader from "../components/Loader";
 
 function Projects() {
   
   const [projectData, setProjectData] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   const { slug } = useParams();
 
@@ -31,11 +33,16 @@ function Projects() {
       .then((data) => {
         setProjectData(data);
         console.log(data);
+        setLoading(false);
       })
       .catch(console.error);
   }, []);
   return (
     <>
+
+    {loading && (
+      <Loader />
+    )}
       <div>
         {projectData &&
           projectData.map((project, index) => (
@@ -44,7 +51,7 @@ function Projects() {
               style={{
                 backgroundImage: `url(${project.backgroundImage.asset.url})`,
               }}
-              key={1}
+              key={project.backgroundImage.asset._id}
             >
               <div className="card glass lg:card-side text-neutral-content">
                 <figure className="p-6">
@@ -55,6 +62,7 @@ function Projects() {
                 </figure>
                 <div className="max-w-md card-body">
                   <h2 className="card-title">{project.title}</h2>
+                  
                   <p>{project.body[0].children[0].text}</p>
                   <div className="card-actions">
                     <button

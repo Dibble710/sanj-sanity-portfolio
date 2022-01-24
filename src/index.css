@@ -35,6 +35,11 @@ body {
   font-size: 150px;
 }
 
+.profile-picture {
+  max-width: 800px;
+  height: auto;
+}
+
 .navBar {
   background: var(--color-one);
 }
@@ -128,3 +133,45 @@ body {
 }
 
 
+/* loader */
+
+#middle {
+  height: 60px;
+  width: 60px;
+  margin: auto;
+  position: relative;
+  top: 20px;
+  border-radius: 50%;
+  background-image: linear-gradient(150deg, transparent 50%, var(--color-one) 50%), linear-gradient(90deg, var(--color-one) 50%, white 50%);
+  -webkit-animation: rotation 1200ms infinite linear;
+  animation: rotation 1200ms infinite linear;
+  transform-origin: 50% 50%;
+  animation-timing-function: ease;
+}
+
+#inner {
+  background: var(--color-four);
+  height: 48px;
+  width: 48px;
+  margin: auto;
+  position: relative;
+  top: 6px;
+  border-radius: 50%;
+}
+
+@-webkit-keyframes rotation {
+  from {
+    -webkit-transform: rotate(270deg);
+  }
+  to {
+    -webkit-transform: rotate(630deg);
+  }
+}
+@keyframes rotation {
+  from {
+    -webkit-transform: rotate(270deg);
+  }
+  to {
+    -webkit-transform: rotate(630deg);
+  }
+}
