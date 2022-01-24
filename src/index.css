@@ -114,6 +114,10 @@ body {
   max-height: 390px;
 }
 
+.single-image {
+  max-width: 400px;
+  max-height: 400px;
+}
 
 /* footer */
 

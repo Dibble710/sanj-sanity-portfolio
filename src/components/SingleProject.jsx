@@ -11,7 +11,7 @@ function SingleProject() {
   let navigate = useNavigate();
 
   function handleClick() {
-    navigate('/projects')
+    navigate("/projects");
   }
 
   const { slug } = useParams();
@@ -24,6 +24,12 @@ function SingleProject() {
             _id,
             slug,
             mainImage{
+                asset->{
+                    _id,
+                    url
+                }
+            },
+            backgroundImage{
                 asset->{
                     _id,
                     url
@@ -52,29 +58,26 @@ function SingleProject() {
       {!singleProject && <Loader />}
 
       {singleProject && (
-        <div className="hero min-h-screen bg-base-200">
-          <div className="flex-col hero-content lg:flex-row-reverse">
-            <img
-              src={singleProject.mainImage.asset.url}
-              className="max-w-sm rounded-lg shadow-2xl"
-            />
-            <div>
-              <h1 className="mb-5 text-5xl font-bold">{singleProject.title}</h1>
-              <BlockContent
-                blocks={singleProject.body}
-                projectId="9fxbut7g"
-                dataset="production"
-                className="mb-7"
-              />
-              <button
-                className="btn btn-custom btn-accent mt-5"
-                style={{ color: "#f1f1f1" }}
-                onClick={() => navigate(-1)}
-              >
-                Go Back
-              </button>
-            </div>
-          </div>
+        <div
+          className="hero min-h-screen bg-base-200"
+          style={{
+            backgroundImage: `url(${singleProject.backgroundImage.asset.url})`,
+          }}
+        >
+ <div className="card glass lg:card-side text-neutral-content">
+        <figure className="p-6">
+          <img src={singleProject.mainImage.asset.url} className="rounded-lg shadow-lg single-image" />
+        </figure> 
+        <div className="max-w-md card-body">
+          <h2 className="card-title">{singleProject.title}</h2>
+          <BlockContent
+            blocks={singleProject.body}
+            projectId="9fxbut7g"
+            dataset="production"
+            className="project-desc"
+          />
+        </div>
+      </div>
         </div>
       )}
     </>
