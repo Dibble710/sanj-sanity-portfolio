@@ -24,10 +24,23 @@ body {
   padding-top: 60px;
 }
 
-.prose img {
-  margin-left: auto;
-  margin-right: auto;
-  border-radius: 5px;
+.home-hero {
+  background-color: var(--background-color-one);
+}
+
+.home-hero h1 {
+  color: var(--text-color-primary);
+}
+
+.home-hero p {
+  color: #f1f1f1f1;
+  font-size: 1.2rem;
+}
+
+@media only screen and (max-width: 600px) {
+  .pfp-home {
+    max-width: 100%;
+  }
 }
 
 .home-name {
@@ -136,7 +149,6 @@ body {
   align-items: center;
 }
 
-
 /* loader */
 
 #middle {
@@ -146,7 +158,12 @@ body {
   position: relative;
   top: 20px;
   border-radius: 50%;
-  background-image: linear-gradient(150deg, transparent 50%, var(--background-color-one) 50%), linear-gradient(90deg, var(--background-color-one) 50%, white 50%);
+  background-image: linear-gradient(
+      150deg,
+      transparent 50%,
+      var(--background-color-one) 50%
+    ),
+    linear-gradient(90deg, var(--background-color-one) 50%, white 50%);
   -webkit-animation: rotation 1200ms infinite linear;
   animation: rotation 1200ms infinite linear;
   transform-origin: 50% 50%;
