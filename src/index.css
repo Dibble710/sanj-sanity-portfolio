@@ -59,6 +59,17 @@ body {
   color: #000 !important;
 }
 
+.btn-custom {
+  border-color: #f1f1f1 !important;
+  background: var(--color-four) !important;
+  color: #000 !important;
+}
+
+.btn-custom:hover {
+  border-color: var(--color-four) !important;
+  background: transparent !important;
+}
+
 /* home page */
 
 .home-card {
@@ -80,6 +91,25 @@ body {
   font-weight: 900;
 }
 
+/* contact */
+
+.contact-text {
+  color: var(--color-one);
+  font-weight: 900;
+}
+
+
+/* project */
+
+.project-image {
+  width: auto;
+  max-height: 390px;
+}
+
+.project-bg-image {
+  width: 100%;
+}
+
 /* footer */
 
 .footer {
@@ -96,3 +126,5 @@ body {
   flex-direction: row;
   align-items: center;
 }
+
+

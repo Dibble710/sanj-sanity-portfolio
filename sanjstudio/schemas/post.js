@@ -32,6 +32,14 @@ export default {
       },
     },
     {
+      name: 'backgroundImage',
+      title: 'Background image',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+    },
+    {
       name: 'categories',
       title: 'Categories',
       type: 'array',
