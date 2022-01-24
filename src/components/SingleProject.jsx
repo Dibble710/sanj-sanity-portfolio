@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import sanityClient from "../client";
-import imageUrlBuilder from "@sanity/image-url";
 import BlockContent from "@sanity/block-content-to-react";
 import Loader from "../components/Loader";
 
@@ -9,10 +8,6 @@ function SingleProject() {
   const [singleProject, setSingleProject] = useState(null);
   const [loading, setLoading] = useState(false);
   let navigate = useNavigate();
-
-  function handleClick() {
-    navigate("/projects");
-  }
 
   const { slug } = useParams();
 
@@ -48,10 +43,6 @@ function SingleProject() {
       .catch(console.error);
   }, [slug]);
 
-  const builder = imageUrlBuilder(sanityClient);
-  function urlFor(source) {
-    return builder.image(source);
-  }
   return (
     <>
       {loading && <Loader />}
@@ -69,6 +60,7 @@ function SingleProject() {
               <img
                 src={singleProject.mainImage.asset.url}
                 className="rounded-lg shadow-lg single-image"
+                alt={singleProject.title}
               />
             </figure>
             <div className="max-w-md card-body">

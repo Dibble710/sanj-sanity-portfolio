@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
 import sanityClient from "../client";
 import Loader from "../components/Loader";
 
@@ -8,7 +7,6 @@ function About() {
   const [aboutData, setAboutData] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  const { slug } = useParams();
 
   useEffect(() => {
     sanityClient

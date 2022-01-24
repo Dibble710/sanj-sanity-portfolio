@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
 import sanityClient from "../client";
 import Loader from "../components/Loader";
 import { Link } from "react-router-dom";
@@ -8,8 +7,6 @@ function Projects() {
   
   const [projectData, setProjectData] = useState(null);
   const [loading, setLoading] = useState(true);
-
-  const { slug } = useParams();
 
   useEffect(() => {
     sanityClient
@@ -60,6 +57,7 @@ function Projects() {
                   <img
                     src={project.mainImage.asset.url}
                     className="rounded-lg shadow-lg project-image"
+                    alt={project.title}
                   />
                 </figure>
                 <div className="max-w-md card-body">
