@@ -64,20 +64,30 @@ function SingleProject() {
             backgroundImage: `url(${singleProject.backgroundImage.asset.url})`,
           }}
         >
- <div className="card glass lg:card-side text-neutral-content">
-        <figure className="p-6">
-          <img src={singleProject.mainImage.asset.url} className="rounded-lg shadow-lg single-image" />
-        </figure> 
-        <div className="max-w-md card-body">
-          <h2 className="card-title">{singleProject.title}</h2>
-          <BlockContent
-            blocks={singleProject.body}
-            projectId="9fxbut7g"
-            dataset="production"
-            className="project-desc"
-          />
-        </div>
-      </div>
+          <div className="card glass lg:card-side text-neutral-content">
+            <figure className="p-6">
+              <img
+                src={singleProject.mainImage.asset.url}
+                className="rounded-lg shadow-lg single-image"
+              />
+            </figure>
+            <div className="max-w-md card-body">
+              <h2 className="card-title">{singleProject.title}</h2>
+              <BlockContent
+                blocks={singleProject.body}
+                projectId="9fxbut7g"
+                dataset="production"
+                className="project-desc"
+              />
+              <button
+                className="btn btn-custom btn-accent mt-5"
+                style={{ color: "#f1f1f1" }}
+                onClick={() => navigate(-1)}
+              >
+               Go Back
+              </button>
+            </div>
+          </div>
         </div>
       )}
     </>
