@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
 import sanityClient from "../client";
 import Loader from "../components/Loader";
 
@@ -35,9 +34,16 @@ function Home() {
 
       {profileData &&
         profileData.map((author, index) => (
-          <div className="card home-card text-center shadow-2xl" key={author.name}>
+          <div
+            className="card home-card text-center shadow-2xl"
+            key={author.name}
+          >
             <figure className="px-10 pt-10 flex items-center justify-center w-full">
-              <img src={author.image.asset.url} className="rounded-xl profile-picture" alt="Author"  />
+              <img
+                src={author.image.asset.url}
+                className="rounded-xl profile-picture"
+                alt="Author"
+              />
             </figure>
             <div className="card-body">
               <h2 className="card-title text-xl text-white">
@@ -53,12 +59,14 @@ function Home() {
                 work with you!
               </p>
               <div className="justify-center card-actions">
-                <button
-                  className="btn btn-outline btn-accent"
-                  style={{ color: "#f1f1f1" }}
-                >
-                  More info
-                </button>
+                <Link to='/about'>
+                  <button
+                    className="btn btn-outline btn-accent"
+                    style={{ color: "#f1f1f1" }}
+                  >
+                    More info
+                  </button>
+                </Link>
               </div>
             </div>
           </div>

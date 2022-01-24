@@ -6,6 +6,7 @@ import About from "./pages/About";
 import Portfolio from "./pages/Portfolio";
 import Contact from "./pages/Contact";
 import Projects from "./pages/Projects";
+import SingleProject from "./components/SingleProject";
 
 
 function App() {
@@ -19,7 +20,9 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/projects" element={<Projects />} />
+          <Route path="/projects/" element={<Projects />} />
+          <Route path="/projects/:slug" element={<SingleProject />} />
+
         </Routes>
       </main>
       <Footer />

@@ -38,13 +38,13 @@ function About() {
       {aboutData &&
         aboutData.map((author, index) => (
           <div
-            className="hero min-h-screen"
+            className="hero min-h-screen rounded-lg"
             style={{
               backgroundImage: `url(${author.image.asset.url})`,
             }}
             key={author.image.asset._id}
           >
-            <div className="hero-overlay bg-opacity-60" />
+            <div className="hero-overlay bg-opacity-60 rounded-lg" />
             <div className="text-center hero-content text-neutral-content">
               <div className="max-w-md">
                 <h1 className="mb-5 text-5xl font-bold">{author.name}</h1>

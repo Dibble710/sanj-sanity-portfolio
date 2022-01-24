@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import sanityClient from "../client";
 import Loader from "../components/Loader";
+import { Link } from "react-router-dom";
 
 function Projects() {
   
@@ -27,7 +28,8 @@ function Projects() {
           url
       }
   },
-      body
+      body,
+      slug
     }`
       )
       .then((data) => {
@@ -65,12 +67,14 @@ function Projects() {
                   
                   <p>{project.body[0].children[0].text}</p>
                   <div className="card-actions">
+                  <Link to={"/projects/" + project.slug.current} key={project.slug.current}>
                     <button
                       className="btn btn-outline btn-accent"
                       style={{ color: "#f1f1f1" }}
                     >
                       View Project
                     </button>
+                    </Link>
                   </div>
                 </div>
               </div>
