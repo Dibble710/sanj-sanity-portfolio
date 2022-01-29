@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import sanityClient from "../client";
 import Loader from "../components/Loader";
+import Pdf from '../assets/Resume.pdf';
 
 function About() {
   const [aboutData, setAboutData] = useState(null);
@@ -34,7 +35,7 @@ function About() {
       {loading && <Loader />}
 
       {aboutData &&
-        aboutData.map((author, index) => (
+        aboutData.map((author) => (
           <div
             className="hero min-h-screen rounded-lg"
             style={{
@@ -57,6 +58,15 @@ function About() {
                     Contact Me
                   </button>
                 </Link>
+                <a
+                    className="btn btn-outline btn-accent ml-5"
+                    style={{ color: "#f1f1f1" }}
+                    href={Pdf}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    View Resume
+                  </a>
               </div>
             </div>
           </div>

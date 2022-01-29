@@ -88,6 +88,10 @@ body {
   background: transparent !important;
 }
 
+.hover-white:hover {
+  color: white !important;
+}
+
 /* home page */
 
 .home-card {

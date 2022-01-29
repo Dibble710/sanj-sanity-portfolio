@@ -26,6 +26,14 @@ export default {
       },
     },
     {
+      name: 'profilePicture',
+      title: 'profilePicture',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+    },
+    {
       name: 'bio',
       title: 'Bio',
       type: 'array',

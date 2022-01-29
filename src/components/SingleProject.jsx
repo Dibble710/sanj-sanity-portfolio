@@ -72,7 +72,7 @@ function SingleProject() {
                 className="project-desc"
               />
               <button
-                className="btn btn-custom btn-accent mt-5"
+                className="btn btn-custom hover-white btn-accent mt-5 hover:text-white"
                 style={{ color: "#f1f1f1" }}
                 onClick={() => navigate(-1)}
               >
