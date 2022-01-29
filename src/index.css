@@ -63,6 +63,10 @@ body {
   font-weight: 650;
 }
 
+.nav-name:hover {
+  color: var(--text-color-primary);
+}
+
 .active {
   color: var(--text-color-primary);
 }
