@@ -63,7 +63,7 @@ function Projects() {
                 <div className="max-w-md card-body">
                   <h2 className="card-title">{project.title}</h2>
                   
-                  <p>{project.body[0].children[0].text}</p>
+                  <p>{project.body? project.body[0].children[0].text : ''}</p>
                   <div className="card-actions">
                   <Link to={"/projects/" + project.slug.current} key={project.slug.current}>
                     <button
