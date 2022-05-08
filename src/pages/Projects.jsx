@@ -4,7 +4,6 @@ import Loader from "../components/Loader";
 import { Link } from "react-router-dom";
 
 function Projects() {
-  
   const [projectData, setProjectData] = useState(null);
   const [loading, setLoading] = useState(true);
 
@@ -26,7 +25,15 @@ function Projects() {
       }
   },
       body,
-      slug
+      slug,
+      gallery{
+        images[]{
+          asset->{
+            _id,
+            url
+          }
+        }
+      }
     }`
       )
       .then((data) => {
@@ -38,10 +45,7 @@ function Projects() {
   }, []);
   return (
     <>
-
-    {loading && (
-      <Loader />
-    )}
+      {loading && <Loader />}
       <div>
         {projectData &&
           projectData.map((project, index) => (
@@ -62,16 +66,19 @@ function Projects() {
                 </figure>
                 <div className="max-w-md card-body">
                   <h2 className="card-title">{project.title}</h2>
-                  
-                  <p>{project.body? project.body[0].children[0].text : ''}</p>
+
+                  <p>{project.body ? project.body[0].children[0].text : ""}</p>
                   <div className="card-actions">
-                  <Link to={"/projects/" + project.slug.current} key={project.slug.current}>
-                    <button
-                      className="btn btn-outline btn-accent"
-                      style={{ color: "#f1f1f1" }}
+                    <Link
+                      to={"/projects/" + project.slug.current}
+                      key={project.slug.current}
                     >
-                      View Project
-                    </button>
+                      <button
+                        className="btn btn-outline btn-accent"
+                        style={{ color: "#f1f1f1" }}
+                      >
+                        View Project
+                      </button>
                     </Link>
                   </div>
                 </div>
