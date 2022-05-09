@@ -59,7 +59,7 @@ function SingleProject() {
       {singleProject && (
         <>
           <div
-            className="hero min-h-screen bg-base-200"
+            className="hero background-card min-h-screen bg-base-200 p-5"
             style={{
               backgroundImage: `url(${singleProject.backgroundImage.asset.url})`,
             }}
@@ -90,13 +90,13 @@ function SingleProject() {
               </div>
             </div>
           </div>
-          <div class="flex flex-row mt-10">
+          <div class="gallery-wrapper">
             {" "}
             { singleProject.gallery && singleProject.gallery.images.map((singleImage) => (
               <img
                 class="rounded shadow-md m-5"
                 src={singleImage.asset.url}
-                width="200px"
+                width="350px"
               ></img>
             ))}
           </div>
